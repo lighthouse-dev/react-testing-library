@@ -4,6 +4,7 @@ function FrameworkList(props) {
   if (!props.frameworks || !props.frameworks.length) {
     return <h1>No data</h1>;
   }
+
   return (
     <div>
       <ul>

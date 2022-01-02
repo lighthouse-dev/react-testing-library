@@ -14,7 +14,7 @@ describe('Rendering', () => {
 });
 
 describe('Input form onChange event', () => {
-  it('Should update input value correctly', () => {
+  it('Input 요소에 문자열 입력했을 경우 value를 업데이트', () => {
     render(<RenderInput />);
     const inputValue = screen.getByPlaceholderText('Enter');
     userEvent.type(inputValue, 'test');
@@ -23,7 +23,7 @@ describe('Input form onChange event', () => {
 });
 
 describe('Console button conditionally triggered', () => {
-  it('Should not trigger output function', () => {
+  it('Input요소에 문자열이 입력되지 않았을 경우 Output 함수를 실행', () => {
     // Mock関数作成し、渡す
     const mockOutputConsole = jest.fn();
     render(<RenderInput outputConsole={mockOutputConsole} />);
@@ -31,7 +31,7 @@ describe('Console button conditionally triggered', () => {
     expect(mockOutputConsole).not.toHaveBeenCalled();
   });
 
-  it('Should trigger output function', () => {
+  it('Input요소에 문자열이 입력되었을 경우 Output 함수를 실행', () => {
     // Mock関数作成し、渡す
     const mockOutputConsole = jest.fn();
     render(<RenderInput outputConsole={mockOutputConsole} />);
