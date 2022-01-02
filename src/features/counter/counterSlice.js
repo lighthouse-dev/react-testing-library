@@ -1,10 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchCount } from './CounterAPI';
+
+const initialState = {
+  value: 0,
+  status: 'idle'
+};
 
 export const counterSlice = createSlice({
   name: 'counter',
-  initialState: {
-    value: 0,
-  },
+  initialState,
   reducers: {
     increment: state => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -18,8 +22,8 @@ export const counterSlice = createSlice({
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload;
-    },
-  },
+    }
+  }
 });
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
